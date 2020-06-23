@@ -15,4 +15,4 @@ tensorflow==2.0.0rc1
 tensorflow-estimator==1.14.0
 termcolor==1.1.0
 tf-estimator-nightly==1.14.0.dev2019080601
-
+scikit-image==0.17.2
