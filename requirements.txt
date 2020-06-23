@@ -11,6 +11,7 @@ numpy==1.18.1
 opencv-python-headless==4.2.0.34
 tb-nightly==1.15.0a20190806
 tensorboard==1.14.0
+gunicorn==20.0.4
 tensorflow==2.0.0rc1
 tensorflow-estimator==1.14.0
 termcolor==1.1.0
