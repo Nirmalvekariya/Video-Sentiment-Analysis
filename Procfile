@@ -1,1 +1,1 @@
-worker: python app.py
+worker: python app.py 0.0.0.0:5000
