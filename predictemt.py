@@ -66,10 +66,10 @@ def removeout():
 def vidframe(vidname):
 	if os.path.exists('output'):
 		removeout()
-    os.mkdir('output')
-    cap = cv2.VideoCapture(vidname) 
-    frameRate=cap.get(5)
-    count = 0
+	os.mkdir('output')
+	cap = cv2.VideoCapture(vidname)
+	frameRate=cap.get(5)
+	count = 0
     while(cap.isOpened()):
         frameId = cap.get(1) #current frame number
         ret, frame = cap.read()
