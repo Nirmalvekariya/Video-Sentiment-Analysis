@@ -41,9 +41,9 @@ def upload():
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
-        print(file_path)
 
         result, face = vidframe(file_path)
+        os.remove(file_path)
 
         smileindex=result.count('happy')/len(result)
         ssimscore=[ssimscore1(i,j) for i, j in zip(face[: -1],face[1 :])]
