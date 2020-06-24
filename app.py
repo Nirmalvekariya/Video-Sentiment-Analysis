@@ -51,17 +51,17 @@ def upload():
         	posture="Not Good"
         else:
         	posture="Good"
-        	fig = plt.figure()
-        	ax = fig.add_axes([0,0,1,1])
-        	ax.axis('equal')
-        	emotion = ['angry','disgust','fear', 'happy', 'sad']
-        	counts = [result.count('angry'),result.count('disgust'),result.count('fear'),result.count('happy'),result.count('sad')]
-        	ax.pie(counts, labels = emotion,autopct='%1.2f%%')
-        	img = io.BytesIO()
-        	plt.savefig(img, format='png')
-        	img.seek(0)
-        	plot_data = urllib.parse.quote(base64.b64encode(img.read()).decode())
-        	return render_template("predict.html", posture = posture, smileindex=smileindex, plot_url=plot_data) 
+        fig = plt.figure()
+        ax = fig.add_axes([0,0,1,1])
+        ax.axis('equal')
+        emotion = ['angry','disgust','fear', 'happy', 'sad']
+        counts = [result.count('angry'),result.count('disgust'),result.count('fear'),result.count('happy'),result.count('sad')]
+        ax.pie(counts, labels = emotion,autopct='%1.2f%%')
+        img = io.BytesIO()
+        plt.savefig(img, format='png')
+        img.seek(0)
+        plot_data = urllib.parse.quote(base64.b64encode(img.read()).decode())
+        return render_template("predict.html", posture = posture, smileindex=smileindex, plot_url=plot_data) 
     return None
 
 
