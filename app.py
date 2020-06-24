@@ -39,9 +39,9 @@ def upload():
     if request.method == 'POST':
         f = request.files['file']
         basepath = os.path.dirname(__file__)
-        file_path = os.path.join(
-            basepath, 'uploads', secure_filename(f.filename))
+        file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
+        print(file_path)
 
         result, face = vidframe(file_path)
 
