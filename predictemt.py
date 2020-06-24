@@ -70,25 +70,24 @@ def vidframe(vidname):
 	cap = cv2.VideoCapture(vidname)
 	frameRate=cap.get(5)
 	count = 0
-    while(cap.isOpened()):
-        frameId = cap.get(1) #current frame number
-        ret, frame = cap.read()
-        if (ret != True):
-            break
-        if (frameId % math.floor(frameRate) == 0):
-            filename ="output/frame%d.jpg" % count;count+=1
-            cv2.imwrite(filename, frame)
-    cap.release()
-    result=[]
-    face=[]
-    for filename in os.listdir("output"):
-        a,b = pred("output/"+filename)
-        result.append(a)
-        face.append(b)
-    result=[x for x in result if x!=0]
-    face=[x for x in face if len(str(x))>1]
-    print ("Done!")
-    return result, face
+	while(cap.isOpened()):
+		frameId = cap.get(1)
+		ret, frame = cap.read()
+		if (ret != True):
+			break
+		if (frameId % math.floor(frameRate) == 0):
+			filename ="output/frame%d.jpg" % count;count+=1
+			cv2.imwrite(filename, frame)
+	cap.release()
+	result=[]
+	face=[]
+	for filename in os.listdir("output"):
+		a,b = pred("output/"+filename)
+		result.append(a)
+		face.append(b)
+	result=[x for x in result if x!=0]
+	face=[x for x in face if len(str(x))>1]
+	return result, face
 
 
 # In[68]:
