@@ -63,7 +63,9 @@ def removeout():
 # In[66]:
 
 
-def vidframe(vidname):   
+def vidframe(vidname):
+	if os.path.exists('output'):
+		removeout()
     os.mkdir('output')
     cap = cv2.VideoCapture(vidname) 
     frameRate=cap.get(5)
@@ -85,7 +87,6 @@ def vidframe(vidname):
         face.append(b)
     result=[x for x in result if x!=0]
     face=[x for x in face if len(str(x))>1]
-    removeout()
     print ("Done!")
     return result, face
 
