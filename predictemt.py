@@ -85,6 +85,7 @@ def vidframe(vidname):
 		a,b = pred("output/"+filename)
 		result.append(a)
 		face.append(b)
+	removeout()
 	result=[x for x in result if x!=0]
 	face=[x for x in face if len(str(x))>1]
 	return result, face
