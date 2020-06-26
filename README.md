@@ -1,8 +1,11 @@
 # Video-Sentiment-Analysis
 
-Run the app using python app.py
-•	Training the model for Facial Expression Detection
+----->  Run the app using python app.py
+----->  Upload or capture a video for sentiment analysis.
+----->  Get a result using the piechart.
 
+
+•	Training the model for Facial Expression Detection
 1)	File name EmotionDetection.ipynb
 2)	DataSet used is Fer2013 data set which contains more than 35K images and 7 types of emotions. For this project we will be considering 5 emotions.
 3)	In this data set 48*48 pixel grayscale images are flattened. So, we will reshape the data into 48*48 pixels. #LINE 30
