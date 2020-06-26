@@ -1,10 +1,32 @@
-<!doctype html> 
-<html> 
-   <body>
-       <h1> Pie Chart:</h1> 
+{% extends 'base.html' %}
+{% block body %}
+<h1 class="display-4 text-center">Video Analysis</h1>
+<br>
 
-    <img src="data:image/png;base64, {{ plot_url }}" alt="Image Placeholder">
+<div class="container">
+	  <div class="row">
+
+	<div class="col">
+    <h1> Pie Chart:</h1> 
+
+    <img src="data:image/png;base64, {{ plot_url }}" class="img-fluid" alt="Image Placeholder">
+</div>
+<div class="row text-center">
+	<table class="table table-borderless">
+		<thead>&nbsp;</thead>
+  	<thead>
+    <tr>
+      <th scope="col">
     <h1> Smile Index: {{ smileindex }}</h1>
+    </th>
+	</tr>
+	</thead>
+	<thead>
+    <tr>
+      <th scope="col">
     <h1>Posture: {{ posture }}
-  </body>
-</html> 
+    </h1>
+    </th>
+	</tr>
+	</thead>
+{% endblock %}
